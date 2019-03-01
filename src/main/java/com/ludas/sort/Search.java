@@ -9,7 +9,7 @@ public class Search {
 
 
     public static void main(String[] args) {
-        int[] arr = {2, 7, 7, 7, 8, 10};
+        int[] arr = {2, 3, 4, 7, 8, 10};
         int i = binarySearchBig(arr, 7);
         System.out.println(i);
 
@@ -97,24 +97,22 @@ public class Search {
      * @date 2019/2/28 17:55
      */
     public static int binarySearchBig(int[] arr, int item) {
-        int low = 0;
-        int high = arr.length - 1;
-        //注意退出条件 {2, 3, 7, 7, 8, 10}
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] < item) {
-                low = mid;
-            } else if (arr[mid] == item) {
-                //{2, 3, 7, 7, 8, 10}
-                if(mid==high||arr[mid+1]>item){
-                    return mid;
-                }else{
-                    low=mid;
-                }
-            } else if (arr[mid] > item) {
-                high = mid;
-            }
-        }
+//        int low = 0;
+//        int high = arr.length - 1;
+//        //注意退出条件 {2, 3, 7, 7, 8, 10}
+//        while (low <= high) {
+//            int mid = (low + high) / 2;
+//            if (arr[mid] >= item) {
+//                //{2, 3, 7, 7, 8, 10}
+//                if(arr[mid-1]<item){
+//                    return mid;
+//                }else{
+//                    low=mid;
+//                }
+//            } else{
+//                low = mid;
+//            }
+//        }
         return -1;
     }
 
