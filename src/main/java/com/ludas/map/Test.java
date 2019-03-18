@@ -19,9 +19,8 @@ public class Test {
         int hash = 123121;
 
         int i = hash % length;
-        System.out.println("%=" + i);
         int j = hash & (length - 1);
-        System.out.println("&=" + j);
+        System.out.println("%=" + i+" &=" + j);
 
     }
 }
