@@ -26,8 +26,8 @@ public class IdWorker {
 
     private long workerIdBits = 5L;
     private long datacenterIdBits = 5L;
-    private long maxWorkerId = -1L ^ (-1L << workerIdBits);
-    private long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);
+    private long maxWorkerId = -1L ^ (-1L << workerIdBits);//31
+    private long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);//31
     private long sequenceBits = 12L;
 
     private long workerIdShift = sequenceBits;
@@ -68,10 +68,7 @@ public class IdWorker {
         }
 
         lastTimestamp = timestamp;
-        return ((timestamp - twepoch) << timestampLeftShift) |
-                (datacenterId << datacenterIdShift) |
-                (workerId << workerIdShift) |
-                sequence;
+        return ((timestamp - twepoch) << timestampLeftShift) |(datacenterId << datacenterIdShift) |(workerId << workerIdShift) |sequence;
     }
 
     private long tilNextMillis(long lastTimestamp) {
