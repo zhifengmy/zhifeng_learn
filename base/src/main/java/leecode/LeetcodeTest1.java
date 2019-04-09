@@ -1,4 +1,4 @@
-package array;
+package leecode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,7 @@ import java.util.Map;
  * @Description:求数组中两数之和坐标 example:[2,3,1,5,9] sum=4 position={1,2}
  * @date 2018/10/11 18:53
  */
-public class TwoSum {
+public class LeetcodeTest1 {
 
     public static void main(String[] args) {
         int[] arr={3,1,5,9,2};
@@ -36,7 +36,7 @@ public class TwoSum {
         return null;
     }
     /**
-     * @Description:两遍Hash表，时间复杂度O(n)
+     * @Description:两次遍历+Hash表，时间复杂度O(n)
      * @author LuDas
      * @date 2018/10/11 18:57
      */
@@ -55,7 +55,7 @@ public class TwoSum {
     }
 
     /**
-     * @Description:一遍Hash表，时间复杂度O(n)
+     * @Description:一次遍历+Hash表，时间复杂度O(n)
      * @author LuDas
      * @date 2018/10/11 18:57
      */
