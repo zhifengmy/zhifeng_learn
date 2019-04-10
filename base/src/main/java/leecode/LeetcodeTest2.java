@@ -16,52 +16,60 @@ public class LeetcodeTest2 {
         ListNode ln2 = new ListNode(2);
         ListNode ln4 = new ListNode(4);
         ListNode ln3 = new ListNode(3);
-        ln2.setNext(ln4);
-        ln4.setNext(ln3);
-
+        ln2.next=ln4;
+        ln4.next=ln3;
+        print(ln2);
         ListNode ln5 = new ListNode(5);
         ListNode ln6 = new ListNode(6);
         ListNode ln8 = new ListNode(8);
-        ln5.setNext(ln6);
-        ln6.setNext(ln8);
+        ln5.next=ln6;
+        ln6.next=ln8;
+        print(ln5);
 
+        ListNode listNode = addTwoNumbers(ln2, ln5);
 
-
-        ListNode cal = cal(ln2, ln5);
-
-
-
-
+        print(listNode);
 
     }
 
-    public static ListNode cal(ListNode ln1, ListNode ln2) {
-
-        while (ln1.getNext()!=null){
-
-
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = l1, q = l2, curr = dummyHead;
+        int carry = 0;
+        while (p != null || q != null) {
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            if (p != null) p = p.next;
+            if (q != null) q = q.next;
         }
+        if (carry > 0) {
+            curr.next = new ListNode(carry);
+        }
+        return dummyHead.next;
+    }
 
-        return null;
+    public static void print(ListNode head){
+        ListNode cur=head;
+        while (cur!=null){
+            System.out.print(cur.val);
+            cur=cur.next;
+        }
+        System.out.println("---------");
     }
 
 }
 
 class ListNode {
 
-    private int value;
+    int val;
 
-    private ListNode next;
+    ListNode next;
 
-    public ListNode(int value) {
-        this.value = value;
-    }
-
-    public ListNode getNext() {
-        return next;
-    }
-
-    public void setNext(ListNode next) {
-        this.next = next;
+    public ListNode(int val) {
+        this.val = val;
     }
 }
