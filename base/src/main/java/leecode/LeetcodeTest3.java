@@ -1,6 +1,8 @@
 package leecode;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author LuDas
@@ -21,5 +23,32 @@ public class LeetcodeTest3 {
         do {
             System.out.println(1111111);
         } while (a!=1);
+    }
+
+    /**
+     * 暴力循环
+     */
+    public static void method1(){
+
+    }
+
+    /**
+     * 如果子字符串中字符是唯一的返回true，否者返回false
+     * @param str
+     * @param start
+     * @param end
+     * @return
+     */
+    public static boolean allUnique(String str,int start,int end){
+
+        Set<Character> set=new HashSet<>();
+        for(int i=start;i<end;i++){
+            Character c = str.charAt(start);
+            if(!set.contains(c)){
+                set.add(c);
+                return  true;
+            }
+        }
+        return false;
     }
 }
