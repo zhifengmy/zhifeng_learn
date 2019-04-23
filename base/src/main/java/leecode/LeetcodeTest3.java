@@ -19,17 +19,27 @@ public class LeetcodeTest3 {
 
 
     public static void main(String[] args) {
-       int a=1;
-        do {
-            System.out.println(1111111);
-        } while (a!=1);
+        int i = method1();
+        System.out.printf("最长子串:"+i);
     }
 
     /**
      * 暴力循环
+     * 时间复杂度O(n^3)
      */
-    public static void method1(){
-
+    public static int method1(){
+        String str="abcabcbb";
+        int n=str.length();
+        int ans = 0;
+        //两层循环找出该字符串中所有的的子串
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<=n;j++){
+                String aa=str.substring(i,j);
+                if (allUnique(str, i, j))
+                    ans = Math.max(ans, j - i);
+            }
+        }
+        return ans;
     }
 
     /**
@@ -43,12 +53,27 @@ public class LeetcodeTest3 {
 
         Set<Character> set=new HashSet<>();
         for(int i=start;i<end;i++){
-            Character c = str.charAt(start);
-            if(!set.contains(c)){
-                set.add(c);
-                return  true;
-            }
+            Character c = str.charAt(i);
+            if(set.contains(c)) return  false;
+            set.add(c);
         }
-        return false;
+        return true;
     }
+
+
+    /**
+     * 滑动窗口(使用HashMap)
+     */
+    public static int method2(){
+        String str="abcabcbb";
+
+
+
+
+
+        return 0;
+    }
+
+
+
 }
