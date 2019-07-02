@@ -17,9 +17,8 @@ public class LeetcodeTest3 {
 
 
     public static void main(String[] args) {
-       int a=1;
-        do {
-            System.out.println(1111111);
-        } while (a!=1);
+
+        int a=300;
+        System.out.println(a%30);
     }
 }
