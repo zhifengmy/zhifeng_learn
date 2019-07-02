@@ -14,7 +14,7 @@ public class TestUnicode {
 		String jsonStr = FileUtils.readAsString(new File("E:\\workspace\\ludas_learn\\base\\src\\main\\java\\MyJson.json"));
 		String str = UicodeBackslashU.unicodeToCn(jsonStr);
 		System.out.println(str);
-//	}
+	}
 
 
 	/**
