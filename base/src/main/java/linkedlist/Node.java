@@ -2,23 +2,13 @@ package linkedlist;
 
 public class Node {
 
-    private int value;
-
-    private Node nextNode;
-
-    public int getValue() {
-        return value;
+    public Node(){}
+    public Node(int value){
+        value=value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
+    public int value;
 
-    public Node getNextNode() {
-        return nextNode;
-    }
+    public Node next;
 
-    public void setNextNode(Node nextNode) {
-        this.nextNode = nextNode;
-    }
 }
