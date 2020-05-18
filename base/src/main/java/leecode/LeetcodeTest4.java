@@ -1,18 +1,34 @@
 package leecode;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author LuDas  ( 困难)
- * @Description: 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
- * 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
- * @date 2019/4/25 15:31
- */
+
 public class LeetcodeTest4 {
 
 
+    public static void main(String[] args) {
+        int[] arr={-2,1,-3,4,-1,2,1,-5,4};
+        int i = maxSubArray(arr);
+        System.out.printf("i="+i);
 
+    }
+
+
+
+    public static int maxSubArray(int[] nums) {
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int max = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i- 1] + nums[i], nums[i]);
+            if (dp[i]>max) {
+                max = dp[i];
+            }
+        }
+        return max;
+    }
 
 
 }

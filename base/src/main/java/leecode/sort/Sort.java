@@ -1,4 +1,4 @@
-package sort;
+package leecode.sort;
 
 
 import java.util.Arrays;

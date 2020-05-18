@@ -1,4 +1,4 @@
-package linkedlist;
+package leecode.linkedlist;
 
 /**
 * @Description:单向链表反转
@@ -42,7 +42,11 @@ public class LinkedListReverse {
 
     }
 
-
+    /**
+     * 链表反转
+     * @param head
+     * @return
+     */
     public static Node reverse(Node head){
         //申请节点，pre和 cur，pre指向null
         Node pre = null;
@@ -60,5 +64,6 @@ public class LinkedListReverse {
         return pre;
 
     }
+
 
 }

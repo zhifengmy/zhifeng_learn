@@ -1,4 +1,4 @@
-package sort;
+package leecode.sort;
 
 /**
  * @author KyLin

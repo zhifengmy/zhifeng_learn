@@ -1,4 +1,4 @@
-package linkedlist;
+package leecode.linkedlist;
 
 public class Node {
 
