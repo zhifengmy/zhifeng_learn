@@ -18,7 +18,7 @@ public class Test {
         for(int i=0;i<obj.length-1;i++){
             obj[i]="aaa"+i;
             res = ci.introspect(obj);
-            //数组会递归计算所存数据大小
+            //数组会递归计算所存对象数据大小
             System.out.println( res.getDeepSize() );
         }
 
